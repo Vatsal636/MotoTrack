@@ -1,0 +1,35 @@
+# Environment Configuration
+.env
+
+# Logs
+*.log
+logs/
+
+# Vendor / Dependencies
+vendor/
+node_modules/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup Files
+*.bak
+*.backup
+*.sql.backup
+
+# Uploads (if you add file upload feature)
+uploads/*
+!uploads/.gitkeep
+
+# Cache
+cache/
+temp/
+tmp/
