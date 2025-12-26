@@ -63,35 +63,3 @@ DB_PASS=
 DB_NAME=mototrack
 ```
 5. Visit `http://localhost/mototrack/`.
-
-## Deployment (InfinityFree)
-See detailed steps in [DEPLOYMENT.md](DEPLOYMENT.md). Summary:
-- Upload the project into your domain’s `htdocs` (e.g., `/mototrack.free.nf/htdocs/`).
-- Place `.env` in the same folder as `index.php`.
-- Set `APP_URL` to your public base, e.g., `http://mototrack.free.nf/`.
-- Create DB in InfinityFree, import [database/schema.sql](database/schema.sql), and set `DB_*` values.
-- Optional SSL: enable, then switch `APP_URL` to `https://...`.
-
-## Security
-- `.env`, `config/`, `database/`, and `logs/` are protected via [.htaccess](.htaccess).
-- CSRF protection: `csrfField()` in forms and `validateCSRFToken()` on POST.
-- Always call `requireLogin()` at the top of authenticated pages.
-- Use prepared statements and filter by `getUserId()` on all queries.
-
-## Troubleshooting
-- CSS/JS not loading: verify `APP_URL` has protocol + trailing slash; open `/assets/css/style.css` directly to test.
-- DB connection errors: check host (`sqlXXX.epizy.com` for InfinityFree), name, user, and case sensitivity.
-- Sessions failing: clear browser cookies; ensure `SESSION_NAME` is unique; in production, `session.cookie_secure=1` requires HTTPS.
-- Errors in production: with `APP_DEBUG=false`, check [logs/php_errors.log](logs/php_errors.log).
-
-## Scripts / Utilities
-- Environment test: [test-env.php](test-env.php)
-- Activity logs: [logs/activity_YYYY-MM-DD.log](logs/)
-
-## Contributing
-- Keep changes minimal and consistent with existing vanilla PHP style.
-- Use prepared statements (PDO) and escape outputs with `e()`.
-- Add CSRF field to all forms and follow POST/Redirect/GET.
-
-## License
-Proprietary/internal use. Do not redistribute without permission.
