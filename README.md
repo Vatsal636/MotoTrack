@@ -63,7 +63,6 @@ DB_PASS=
 DB_NAME=mototrack
 ```
 5. Visit `http://localhost/mototrack/`.
-6. Default admin: `admin` / `admin123` (change after first login).
 
 ## Deployment (InfinityFree)
 See detailed steps in [DEPLOYMENT.md](DEPLOYMENT.md). Summary:
